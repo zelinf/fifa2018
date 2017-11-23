@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.6)
+project(fifa2018)
+
+# Dependencies
+add_subdirectory(libs/catch)
+
+enable_testing()
+# Our own components
+
+add_subdirectory(src/app)
+add_subdirectory(src/fifa2018)
