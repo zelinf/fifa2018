@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 project(fifa2018)
 
+set(CMAKE_CXX_STANDARD 14)
+
 # Dependencies
 add_subdirectory(libs/catch)
 
