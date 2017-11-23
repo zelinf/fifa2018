@@ -3,11 +3,13 @@ project(fifa2018-lib)
 # Library
 set(PUBLIC_HEADERS
         include/fifa2018/Team.h
-        include/fifa2018/RandomGen.h)
+        include/fifa2018/RandomGen.h
+        include/fifa2018/Player.h)
 add_library(fifa2018
         ${PUBLIC_HEADERS}
         src/Team.cpp
-        src/RandomGen.cpp)
+        src/RandomGen.cpp
+        src/Player.cpp)
 target_include_directories(fifa2018 PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         PRIVATE src)

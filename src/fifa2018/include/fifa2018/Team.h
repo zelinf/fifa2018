@@ -1,13 +1,18 @@
 #pragma once
 
 #include <string>
+#include <utility>
+#include <vector>
+#include <memory>
 
 namespace fifa2018 {
 
+class Player;
+
 class Team {
 public:
-    Team(const std::string &name, const std::string &continent)
-            : name(name), continent(continent) {}
+    Team(std::string name, std::string continent)
+            : name(std::move(name)), continent(std::move(continent)) {}
 
     const std::string &getName() const { return name; }
 
@@ -24,6 +29,8 @@ public:
 private:
     std::string name;
     std::string continent;
+
+    std::vector<std::shared_ptr<Player>> players;
 };
 
 }
