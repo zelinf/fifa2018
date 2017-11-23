@@ -1,0 +1,44 @@
+version: 0.1.{build}-{branch}
+skip_tags: false
+skip_non_tags: false
+max_jobs: 1
+
+image: Visual Studio 2015
+init:
+  - git config --global core.autocrlf true
+clone_depth: 1
+platform:
+  - Win32
+  - x64
+configuration:
+  - Release
+build:
+  parallel: true
+  project: build/ALL_BUILD.vcxproj
+  verbosity: normal
+before_build:
+  - mkdir build
+  - cd build
+  - 'cmake -DCMAKE_GENERATOR_PLATFORM=%PLATFORM% ..'
+#after_build:
+#  - 'ren %APPVEYOR_BUILD_FOLDER%\build\src\app\Release\poly-calc-app.exe poly-calc-app-%PLATFORM%.exe'
+
+test_script:
+  - ctest
+
+#artifacts:
+#  - path: build/src/app/Release/poly-calc-app-${platform}.exe
+#    name: poly-calc-app
+#    type: File
+#deploy:
+#  - provider: GitHub
+#    release: ${APPVEYOR_REPO_BRANCH}
+#    description: 'A simple polynomial calculator'
+#    auth_token:
+#      secure: wCLCNSQ1gr1PWkBxxhfkeTdWCjdmChy3C/yl0w0iYCB6OThAnJZWUHL442xj77yd
+#    artifact: poly-calc-app
+#    draft: false
+#    prerelease: false
+#    on:
+#      branch: /v\d\.\d\.\d/
+#      appveyor_repo_tag: true
