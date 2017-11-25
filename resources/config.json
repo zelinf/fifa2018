@@ -1,0 +1,31 @@
+{
+  "teams": [
+    {
+      "name": "Russia (host)",
+      "continent": "Europe",
+      "players": [
+        {
+          "name": "Zoey",
+          "number": 1,
+          "position": "FW",
+          "role": "Captain"
+        },
+        {
+          "name": "Francis",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    [
+      "Russia",
+      "Germany",
+      "England",
+      "France"
+    ],
+    []
+  ]
+}
