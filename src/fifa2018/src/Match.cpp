@@ -30,6 +30,7 @@ void Match::randomGoal(bool must) {
 }
 
 void Match::runMatch() {
+    hasRun = true;
     RandomGen &randomGen = RandomGen::getDefaultRandomGen();
     for (int32_t i = 0; i != 4; ++i) {
         randomGoal(false);
@@ -41,18 +42,24 @@ void Match::runMatch() {
 }
 
 int32_t Match::goalOfTeamA() const {
+    requireMatchRun();
     return teamGoals.find(teamA)->second;
 }
 
 int32_t Match::goalOfTeamB() const {
+    requireMatchRun();
     return teamGoals.find(teamB)->second;
 }
 
 const std::map<std::shared_ptr<Player>, int32_t> &Match::goalOfPlayers() const {
+    requireMatchRun();
     return playerGoals;
 }
 
-Match::Match(std::shared_ptr<Team> teamA, std::shared_ptr<Team> teamB, bool allowDraw)
+Match::Match(std::shared_ptr<Team> teamA,
+             std::shared_ptr<Team> teamB,
+             std::string timeAddress,
+             bool allowDraw)
         : teamA(std::move(teamA)), teamB(std::move(teamB)), allowDraw(allowDraw) {
     teamGoals.insert({teamA, 0});
     teamGoals.insert({teamB, 0});

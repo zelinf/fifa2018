@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <utility>
 #include <map>
+#include <stdexcept>
 
 namespace fifa2018 {
 
@@ -16,18 +17,80 @@ private:
     std::shared_ptr<Team> teamA;
     std::shared_ptr<Team> teamB;
     bool allowDraw;
+    std::string timeAddress;
 public:
-    Match(std::shared_ptr<Team> teamA, std::shared_ptr<Team> teamB, bool allowDraw);
+    /**
+     * 创建一个比赛，但模拟不会立即执行
+     * @param teamA 第一支队伍
+     * @param teamB 第二支队伍
+     * @param timeAddress 时间地点
+     * @param allowDraw 是否允许平局
+     */
+    explicit Match(std::shared_ptr<Team> teamA = nullptr,
+                   std::shared_ptr<Team> teamB = nullptr,
+                   std::string timeAddress = "",
+                   bool allowDraw = false);
 
+    /**
+     * 模拟这场比赛，执行完这个方法后才可以调用返回比赛结果的方法
+     */
     void runMatch();
 
+private:
+    bool hasRun = false;
+
+    void requireMatchRun() const {
+        if (!hasRun)
+            throw std::logic_error(
+                    "Match must run before "
+                            "the execution of this method.");
+    }
+
+public:
+
+    void setTeamA(std::shared_ptr<Team> teamA) {
+        hasRun = false;
+        this->teamA = std::move(teamA);
+    }
+
+    void setTeamB(std::shared_ptr<Team> teamB) {
+        hasRun = false;
+        this->teamB = std::move(teamB);
+    }
+
+    void setTimeAddress(const std::string &timeAddress) {
+        this->timeAddress = timeAddress;
+    }
+
+    /**
+     * 返回第一支队伍的进球数
+     * @throw std::logic_error 如果runMatch方法还未被调用
+     */
     int32_t goalOfTeamA() const;
 
+    /**
+     * 返回第二支队伍的进球数
+     * @throw std::logic_error 如果runMatch方法还未被调用
+     */
     int32_t goalOfTeamB() const;
 
+    /**
+     * 比赛结果是否为平局
+     * @return true 如果比赛结果是平局
+     * @throw std::logic_error 如果runMatch方法还未被调用
+     */
     bool isDraw() const { return goalOfTeamA() == goalOfTeamB(); }
 
+    /**
+     * 返回各个球员的进球数。未进球的球员不会被包含在这里
+     */
     const std::map<std::shared_ptr<Player>, int32_t> &goalOfPlayers() const;
+
+    /**
+     * 返回比赛进行的时间地点，与构造此对象时传进来的时间地点一致
+     * @return 时间地点
+     */
+    const std::string &getTimeAddress() const { return timeAddress; }
 
 private:
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
