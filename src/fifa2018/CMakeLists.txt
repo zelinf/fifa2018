@@ -17,7 +17,8 @@ target_include_directories(fifa2018 PUBLIC
 # Test Suite
 add_executable(fifa2018-test
         test/TestMain.cpp
-        test/RandomGenTest.cpp)
+        test/RandomGenTest.cpp
+        test/TeamPlayerTest.cpp)
 target_link_libraries(fifa2018-test
         fifa2018
         catch)
