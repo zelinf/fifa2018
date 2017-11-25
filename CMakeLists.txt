@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 # Dependencies
 add_subdirectory(libs/catch)
+add_subdirectory(libs/json)
 
 enable_testing()
 # Our own components
