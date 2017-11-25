@@ -12,33 +12,35 @@ platform:
   - x64
 configuration:
   - Release
-build:
-  parallel: true
-  project: build/ALL_BUILD.vcxproj
-  verbosity: normal
 before_build:
   - mkdir build
   - cd build
-  - 'cmake -DCMAKE_GENERATOR_PLATFORM=%PLATFORM% ..'
-#after_build:
-#  - 'ren %APPVEYOR_BUILD_FOLDER%\build\src\app\Release\poly-calc-app.exe poly-calc-app-%PLATFORM%.exe'
+  - 'cmake -DCMAKE_GENERATOR_PLATFORM=%PLATFORM% -DCMAKE_INSTALL_PREFIX=. ..'
+build_script:
+  - 'msbuild /p:configuration=%CONFIGURATION% ALL_BUILD.vcxproj'
+  - 'msbuild /p:configuration=%CONFIGURATION% src/app/INSTALL.vcxproj'
 
 test_script:
   - ctest
+after_test:
+  - 'if "%PLATFORM%" == "Win32" set PLATFORM=x86'
+  - 'set ARCHIVE_NAME=fifa2018-%APPVEYOR_REPO_BRANCH%-windows-%PLATFORM%.zip'
+  - '7z a %ARCHIVE_NAME% fifa2018'
 
-#artifacts:
-#  - path: build/src/app/Release/poly-calc-app-${platform}.exe
-#    name: poly-calc-app
-#    type: File
-#deploy:
-#  - provider: GitHub
-#    release: ${APPVEYOR_REPO_BRANCH}
-#    description: 'A simple polynomial calculator'
-#    auth_token:
-#      secure: wCLCNSQ1gr1PWkBxxhfkeTdWCjdmChy3C/yl0w0iYCB6OThAnJZWUHL442xj77yd
-#    artifact: poly-calc-app
-#    draft: false
-#    prerelease: false
-#    on:
-#      branch: /v\d\.\d\.\d/
-#      appveyor_repo_tag: true
+artifacts:
+  - path: build/${ARCHIVE_NAME}
+    name: fifa2018
+    type: zip
+
+deploy:
+  - provider: GitHub
+    release: ${APPVEYOR_REPO_BRANCH}
+    description: 'World Cup 2018 Simulation'
+    auth_token:
+      secure: wCLCNSQ1gr1PWkBxxhfkeTdWCjdmChy3C/yl0w0iYCB6OThAnJZWUHL442xj77yd
+    artifact: fifa2018
+    draft: false
+    prerelease: false
+    on:
+      branch: /v\d+\.\d+\.\d+/
+      appveyor_repo_tag: true
