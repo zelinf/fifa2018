@@ -5,6 +5,7 @@
 #include <memory>
 #include <deque>
 #include <fifa2018/Match.h>
+#include <json/json.hpp>
 
 namespace fifa2018 {
 
@@ -25,6 +26,11 @@ public:
      * 执行比赛。各阶段日志输出到指定文件（英文）
      */
     void runTournament();
+
+    class InvalidConfigException : public std::exception {
+    public:
+        InvalidConfigException() = default;
+    };
 
 private:
     // 从输入流读取初始配置数据，包括队伍、队员信息以及比赛安排
@@ -52,6 +58,12 @@ private:
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
     // 冠军、亚军、季军
     std::vector<std::shared_ptr<Team>> topThree;
+
+    void readTeams(const nlohmann::json &config);
+
+    void readTimeAddress(const nlohmann::json &config);
+
+    void configGroupMatch(const nlohmann::json &config);
 };
 
 }

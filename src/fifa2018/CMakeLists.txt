@@ -18,6 +18,8 @@ add_library(fifa2018
 target_include_directories(fifa2018 PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         PRIVATE src)
+target_link_libraries(fifa2018
+        json)
 
 # Test Suite
 add_executable(fifa2018-test
