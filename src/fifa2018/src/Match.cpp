@@ -58,9 +58,14 @@ const std::map<std::shared_ptr<Player>, int32_t> &Match::goalOfPlayers() const {
 
 Match::Match(std::shared_ptr<Team> teamA,
              std::shared_ptr<Team> teamB,
-             std::string timeAddress,
+             std::string address,
+             const time_type &time,
              bool allowDraw)
-        : teamA(std::move(teamA)), teamB(std::move(teamB)), allowDraw(allowDraw) {
+        : teamA(std::move(teamA)),
+          teamB(std::move(teamB)),
+          address(std::move(address)),
+          time(time),
+          allowDraw(allowDraw) {
     teamGoals.insert({teamA, 0});
     teamGoals.insert({teamB, 0});
 }

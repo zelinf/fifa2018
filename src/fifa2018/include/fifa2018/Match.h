@@ -5,6 +5,7 @@
 #include <utility>
 #include <map>
 #include <stdexcept>
+#include <chrono>
 
 namespace fifa2018 {
 
@@ -17,7 +18,11 @@ private:
     std::shared_ptr<Team> teamA;
     std::shared_ptr<Team> teamB;
     bool allowDraw;
-    std::string timeAddress;
+    std::string address;
+public:
+    using time_type = std::chrono::system_clock::time_point;
+private:
+    time_type time;
 public:
     /**
      * 创建一个比赛，但模拟不会立即执行
@@ -28,7 +33,8 @@ public:
      */
     explicit Match(std::shared_ptr<Team> teamA = nullptr,
                    std::shared_ptr<Team> teamB = nullptr,
-                   std::string timeAddress = "",
+                   std::string address = "",
+                   const time_type &time = std::chrono::system_clock::now(),
                    bool allowDraw = false);
 
     /**
@@ -58,9 +64,9 @@ public:
         this->teamB = std::move(teamB);
     }
 
-    void setTimeAddress(const std::string &timeAddress) {
-        this->timeAddress = timeAddress;
-    }
+    void setTime(const time_type &time) { this->time = time; }
+
+    void setAddress(std::string address) { this->address = std::move(address); }
 
     /**
      * 返回第一支队伍的进球数
@@ -87,10 +93,16 @@ public:
     const std::map<std::shared_ptr<Player>, int32_t> &goalOfPlayers() const;
 
     /**
-     * 返回比赛进行的时间地点，与构造此对象时传进来的时间地点一致
-     * @return 时间地点
+     * 返回比赛进行的时间
+     * @return 时间
      */
-    const std::string &getTimeAddress() const { return timeAddress; }
+    time_type getTime() const { return time; }
+
+    /**
+     * 返回比赛进行的地点
+     * @return 地点
+     */
+    const std::string &getAddress() const { return address; }
 
 private:
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
