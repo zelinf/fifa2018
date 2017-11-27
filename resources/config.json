@@ -27,5 +27,15 @@
       "France"
     ],
     []
+  ],
+  "time_address": [
+    {
+      "time": "2018-06-14 14:00",
+      "address": "Moscow"
+    },
+    {
+      "time": "2018-06-14 15:20",
+      "address": "Kiev"
+    }
   ]
 }
