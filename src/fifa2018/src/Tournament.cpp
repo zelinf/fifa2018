@@ -129,51 +129,52 @@ void Tournament::readTimeAddress(const nlohmann::json &config) {
 
 // 8 groups, each groups has 4 teams.
 void Tournament::configGroupMatch(const nlohmann::json &config) {
-	if (config["groups"].size() != 8)
-		throw InvalidConfigException();
+    if (config["groups"].size() != 8)
+        throw InvalidConfigException();
 
-	int32_t index = 0;
-	for (const nlohmann::json &group_json : config["groups"]) {
-		if (group_json.size() != 4)
-			throw InvalidConfigException();
+    int32_t index = 0;
+    for (const nlohmann::json &group_json : config["groups"]) {
+        if (group_json.size() != 4)
+            throw InvalidConfigException();
 
-		std::shared_ptr<Team> team_1 = findTeam(group_json[0]);
-		std::shared_ptr<Team> team_2 = findTeam(group_json[1]);
-		std::shared_ptr<Team> team_3 = findTeam(group_json[2]);
-		std::shared_ptr<Team> team_4 = findTeam(group_json[3]);
+        std::shared_ptr<Team> team_1 = findTeam(group_json[0]);
+        std::shared_ptr<Team> team_2 = findTeam(group_json[1]);
+        std::shared_ptr<Team> team_3 = findTeam(group_json[2]);
+        std::shared_ptr<Team> team_4 = findTeam(group_json[3]);
 
-		remainingMatches[index].setTeamA(team_1);
-		remainingMatches[index].setTeamB(team_2);
+        remainingMatches[index].setTeamA(team_1);
+        remainingMatches[index].setTeamB(team_2);
 
-		remainingMatches[index + 1].setTeamA(team_3);
-		remainingMatches[index + 1].setTeamB(team_4);
+        remainingMatches[index + 1].setTeamA(team_3);
+        remainingMatches[index + 1].setTeamB(team_4);
 
-		remainingMatches[index + 2].setTeamA(team_1);
-		remainingMatches[index + 2].setTeamB(team_3);
+        remainingMatches[index + 2].setTeamA(team_1);
+        remainingMatches[index + 2].setTeamB(team_3);
 
-		remainingMatches[index + 3].setTeamA(team_4);
-		remainingMatches[index + 3].setTeamB(team_2);
+        remainingMatches[index + 3].setTeamA(team_4);
+        remainingMatches[index + 3].setTeamB(team_2);
 
-		remainingMatches[index + 4].setTeamA(team_4);
-		remainingMatches[index + 4].setTeamB(team_1);
+        remainingMatches[index + 4].setTeamA(team_4);
+        remainingMatches[index + 4].setTeamB(team_1);
 
-		remainingMatches[index + 5].setTeamA(team_2);
-		remainingMatches[index + 5].setTeamB(team_3);
+        remainingMatches[index + 5].setTeamA(team_2);
+        remainingMatches[index + 5].setTeamB(team_3);
 
-		index += 6;
-	}
+        index += 6;
+    }
 }
 
 std::shared_ptr<Team> Tournament::findTeam(const std::string &teamName) const {
-	auto team_it = std::find(teamScores.cbegin(), teamScores.cend(),
-		[&teamName](std::shared_ptr<Team> team) {
-		return team->getName() == teamName;
-	}
-	);
-	if (team_it == teamScores.cend()) {
-		throw InvalidConfigException();
-	}
-	return team_it->first;
+
+    auto team_it = std::find_if(teamScores.cbegin(), teamScores.cend(),
+        [&teamName](const auto &pair) {
+            return pair.first->getName() == teamName;
+        }
+    );
+    if (team_it == teamScores.cend()) {
+        throw InvalidConfigException();
+    }
+    return team_it->first;
 }
 
 }
