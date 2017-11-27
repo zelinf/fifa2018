@@ -64,6 +64,8 @@ private:
     void readTimeAddress(const nlohmann::json &config);
 
     void configGroupMatch(const nlohmann::json &config);
+
+	std::shared_ptr<Team> findTeam(const std::string &teamName) const;
 };
 
 }
