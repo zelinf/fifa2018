@@ -6,6 +6,7 @@
 #include <map>
 #include <stdexcept>
 #include <chrono>
+#include <functional>
 
 namespace fifa2018 {
 
@@ -40,7 +41,8 @@ public:
     /**
      * 模拟这场比赛，执行完这个方法后才可以调用返回比赛结果的方法
      */
-    void runMatch();
+    void runMatch(std::function<void(std::shared_ptr<Player>)> onNewGoal =
+        std::function<void(std::shared_ptr<Player>)>());
 
 private:
     bool hasRun = false;
@@ -51,6 +53,8 @@ private:
                     "Match must run before "
                             "the execution of this method.");
     }
+
+    std::function<void(std::shared_ptr<Player>)> onNewGoal;
 
 public:
 
