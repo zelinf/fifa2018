@@ -6,6 +6,7 @@
 #include <map>
 #include <stdexcept>
 #include <chrono>
+#include <functional>
 
 namespace fifa2018 {
 
@@ -40,7 +41,8 @@ public:
     /**
      * 模拟这场比赛，执行完这个方法后才可以调用返回比赛结果的方法
      */
-    void runMatch();
+    void runMatch(std::function<void(std::shared_ptr<Player>)> onNewGoal =
+        std::function<void(std::shared_ptr<Player>)>());
 
 private:
     bool hasRun = false;
@@ -52,7 +54,13 @@ private:
                             "the execution of this method.");
     }
 
+    std::function<void(std::shared_ptr<Player>)> onNewGoal;
+
 public:
+
+    std::shared_ptr<Team> getTeamA() const { return teamA; }
+
+    std::shared_ptr<Team> getTeamB() const { return teamB; }
 
     void setTeamA(std::shared_ptr<Team> teamA) {
         hasRun = false;

@@ -5,6 +5,11 @@
 #include <ctime>
 #include <cstdint>
 #include <algorithm>
+#include <fstream>
+#include <fmt/format.h>
+#include <fmt/time.h>
+#include <chrono>
+#include <vector>
 
 namespace fifa2018 {
 
@@ -31,6 +36,19 @@ void Tournament::readConfig() {
 void Tournament::runGroupMatch() {
     // TODO runGroupMatch
     // 执行小组赛
+    // The first 48 matches are group match. Each 6 matches belongs to a group.
+    {
+        std::ofstream schedule("schedule16.txt", std::ofstream::out);
+        showGroupMatchByGroup(schedule);
+        showGroupMatchByDate(schedule);
+
+    }
+
+    {
+        std::ofstream procedure("procedure16.txt", std::ofstream::out);
+        procedure << "Group stage:\n";
+        
+    }
 }
 
 void Tournament::runRemainingMatches() {
@@ -167,14 +185,66 @@ void Tournament::configGroupMatch(const nlohmann::json &config) {
 std::shared_ptr<Team> Tournament::findTeam(const std::string &teamName) const {
 
     auto team_it = std::find_if(teamScores.cbegin(), teamScores.cend(),
-        [&teamName](const auto &pair) {
-            return pair.first->getName() == teamName;
-        }
+                                [&teamName](const auto &pair) {
+                                    return pair.first->getName() == teamName;
+                                }
     );
     if (team_it == teamScores.cend()) {
         throw InvalidConfigException();
     }
     return team_it->first;
+}
+
+void Tournament::showGroupMatchByGroup(std::ostream &out) const {
+    out << "Matches by groups\n";
+
+    int matchIndex = 0;
+    for (int currentGroup = 1; currentGroup <= GROUPS; ++currentGroup) {
+        char groupLabel = static_cast<char>('A' + (currentGroup - 1));
+        out << fmt::format("Group {}\n", groupLabel);
+
+        for (int groupMatch = 0; groupMatch < GROUP_MATCHES; ++groupMatch) {
+            const std::string &teamAName = remainingMatches[matchIndex].getTeamA()->getName();
+            const std::string &teamBName = remainingMatches[matchIndex].getTeamB()->getName();
+            const std::string &address = remainingMatches[matchIndex].getAddress();
+            time_t time = std::chrono::system_clock::to_time_t(remainingMatches[matchIndex].getTime());
+            out << fmt::format(" {} vs {}, {}, {:%B %e %H:%M}\n", teamAName, teamBName, address,
+                               *std::gmtime(&time));
+            ++matchIndex;
+        }
+        out << "\n";
+    }
+    out << "\n";
+}
+
+void Tournament::showGroupMatchByDate(std::ostream &out) const {
+    out << "Matches by date\n";
+    std::vector<const Match *> matches;
+    for (int i = 0; i < GROUPS * GROUP_MATCHES; ++i) {
+        const Match *match = &remainingMatches[i];
+        matches.push_back(match);
+    }
+    std::sort(matches.begin(), matches.end(),
+              [](const Match *lhs, const Match *rhs) {
+                  return lhs->getTime() < rhs->getTime();
+              });
+    bool isFirstMatch = true;
+    std::time_t currentDate;
+    for (const Match *match : matches) {
+        std::time_t currentTime = std::chrono::system_clock::to_time_t(match->getTime());
+        if (isFirstMatch
+            || std::gmtime(&currentTime)->tm_yday != std::gmtime(&currentDate)->tm_yday) {
+            isFirstMatch = false;
+            currentDate = currentTime;
+            out << fmt::format("{:%B %e}\n", currentDate);
+        }
+
+        out << fmt::format("{} vs {}, {}, {:%H:%M}\n",
+                           match->getTeamA()->getName(),
+                           match->getTeamB()->getName(),
+                           match->getAddress(),
+                           currentTime);
+    }
 }
 
 }

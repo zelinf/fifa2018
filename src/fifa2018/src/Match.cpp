@@ -2,6 +2,7 @@
 #include <fifa2018/RandomGen.h>
 #include <fifa2018/Player.h>
 #include <fifa2018/Team.h>
+#include <utility>
 
 namespace fifa2018 {
 
@@ -11,6 +12,7 @@ void Match::randomPlayerGoal(std::shared_ptr<Team> team) {
     int32_t playerIndex = randomGen
             .next(0, static_cast<int32_t>(team->getPlayers().size()));
     ++playerGoals[team->getPlayers()[playerIndex]];
+    onNewGoal(team->getPlayers()[playerIndex]);
 }
 
 void Match::randomGoal(bool must) {
@@ -29,8 +31,10 @@ void Match::randomGoal(bool must) {
     }
 }
 
-void Match::runMatch() {
+void Match::runMatch(std::function<void(std::shared_ptr<Player>)> onNewGoal) {
     hasRun = true;
+    this->onNewGoal = std::move(onNewGoal);
+
     RandomGen &randomGen = RandomGen::getDefaultRandomGen();
     for (int32_t i = 0; i != 4; ++i) {
         randomGoal(false);

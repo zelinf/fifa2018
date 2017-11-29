@@ -65,7 +65,14 @@ private:
 
     void configGroupMatch(const nlohmann::json &config);
 
-	std::shared_ptr<Team> findTeam(const std::string &teamName) const;
+    std::shared_ptr<Team> findTeam(const std::string &teamName) const;
+
+    static const int GROUP_MATCHES = 6;
+    static const int GROUPS = 8;
+
+    void showGroupMatchByGroup(std::ostream &out) const;
+
+    void showGroupMatchByDate(std::ostream &out) const;
 };
 
 }
