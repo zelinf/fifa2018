@@ -54,6 +54,10 @@ private:
 
 public:
 
+    std::shared_ptr<Team> getTeamA() const { return teamA; }
+
+    std::shared_ptr<Team> getTeamB() const { return teamB; }
+
     void setTeamA(std::shared_ptr<Team> teamA) {
         hasRun = false;
         this->teamA = std::move(teamA);
