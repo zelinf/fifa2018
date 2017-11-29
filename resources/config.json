@@ -2,7 +2,7 @@
   "teams": [
     {
       "name": "Russia (host)",
-      "continent": "Europe",
+      "continent": "UEFA",
       "players": [
         {
           "name": "Zoey",
@@ -17,16 +17,2289 @@
           "role": "ViceCaptain"
         }
       ]
+    },
+    {
+      "name": "Belgium",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Timmy SIMONS",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Sebastien POCOGNOLI",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Christian BENTEKE",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Steven DEFOUR",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Marouane FELLAINI",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Simon MIGNOLET",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Romelu LUKAKU",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Kevin DE BRUYNE",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Koen CASTEELS",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Divock ORIGI",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Christian KABASELE",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Croatia",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Luka MODRIC",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Nikola KALINIC",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Dejan LOVREN",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Sime VRSALJKO",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ivan STRINIC",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Dominik LIVAKOVIC",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Marko PJACA",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Tin JEDVAJ",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Mario MANDZUKIC",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Duje COP",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Marko ROG",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Denmark",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Jesper HANSEN",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "William KVIST",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Jonas LOSSL",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Mike JENSEN",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Mathias JORGENSEN",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Jannik VESTERGAARD",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Jonas KNUDSEN",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Martin BRAITHWAITE",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Jens LARSEN",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Nicolaj THOMSEN",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Kasper DOLBERG",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "England",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Jermain DEFOE",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Danny WELBECK",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Phil JAGIELKA",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Kieran TRIPPIER",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Daniel STURRIDGE",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Nathan REDMOND",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Jack BUTLAND",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Alex OXLADE CHAMBERLAIN",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Kyle WALKER",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Adam LALLANA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Eric DIER",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "France",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Patrice EVRA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Sebastien CORCHIA",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Andre Pierre GIGNAC",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Benjamin MENDY",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Tiemoue BAKAYOKO",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Laurent KOSCIELNY",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Olivier GIROUD",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Dimitri PAYET",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Alphonse AREOLA",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Geoffrey KONDOGBIA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Layvin KURZAWA",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Germany",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Sami KHEDIRA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Kevin TRAPP",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Jerome BOATENG",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Bernd LENO",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Marvin PLATTENHARDT",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Mats HUMMELS",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Thomas MUELLER",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Maximilian MEYER",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Joshua KIMMICH",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Serge GNABRY",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Amin YOUNES",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Iceland",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Olafur SKULASON",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Ragnar SIGURDSSON",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Elmar BJARNASON",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ari SKULASON",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Rurik GISLASON",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Hannes HALLDORSSON",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Runar SIGURJONSSON",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Sverrir INGASON",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Hordur MAGNUSSON",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Aron ELIS THRANDARSON",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Aron SIGURDARSON",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Poland",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Artur BORUC",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Slawomir PESZKO",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Kamil GROSICKI",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Artur JEDRZEJCZYK",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Maciej RYBUS",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Rafal WOLSKI",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Lukasz SKORUPSKI",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Bartosz SALAMON",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Thiago CIONEK",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Bartosz KAPUSTKA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Damian DABROWSKI",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Portugal",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "RICARDO QUARESMA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "BRUNO ALVES",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "NANI",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "FABIO COENTRAO",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "ADRIEN SILVA",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "DANILO",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "EDER",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "JOAO CANCELO",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "JOAO MARIO",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "ANTHONY LOPES",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "ANDRE SILVA",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Serbia",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Dusko TOSIC",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Aleksandar KOLAROV",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Zoran TOSIC",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ivan OBRADOVIC",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Nemanja MATIC",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Jagos VUKOVIC",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Aleksandar IGNJOVSKI",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Aleksandar MITROVIC",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Aleksandar KATAI",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Marko DMITROVIC",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Nikola STOJILJKOVIC",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Spain",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Pepe REINA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Sergio RAMOS",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Juan MATA",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Asier ILLARRAMENDI",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Jose Maria CALLEJON",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Sergio BUSQUETS",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "ISCO",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "PACO ALCACER",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Marc BARTRA",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Diego COSTA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Gerard DEULOFEU",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Sweden",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Andreas GRANQVIST",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Marcus BERG",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Martin OLSSON",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Jimmy DURMAZ",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Pontus JANSSON",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Filip HELANDER",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Victor LINDELOF",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Robin OLSEN",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Emil FORSBERG",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Niklas HULT",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Patrik CARLGREN",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Switzerland",
+      "continent": "UEFA",
+      "players": [
+        {
+          "name": "Stephan LICHTSTEINER",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Blerim DZEMAILI",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Valentin STOCKER",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ricardo RODRIGUEZ",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Mario GAVRANOVIC",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Timm KLOSE",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Fabian SCHAER",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Roman BUERKI",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Francois MOUBANDJE",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Denis ZAKARIA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Shani TARASHAJ",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Australia",
+      "continent": "AFC",
+      "players": [
+        {
+          "name": "Mark MILLIGAN",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Tim CAHILL",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Nikita RUKAVYTSYA",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Aaron MOOY",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Massimo LUONGO",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Aziz BEHICH",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Tommy ROGIC",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Joshua RISDON",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Craig GOODWIN",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Alex GERSBACH",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Bailey WRIGHT",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Iran",
+      "continent": "AFC",
+      "players": [
+        {
+          "name": "Mark MILLIGAN",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Omid ALISHAH",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Kamaleddin KAMYABINIA",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ali KARIMI",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Dariush SHOJAEIAN",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Hamed LAK",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Roozbeh CHESHMI",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Masoud SHOJAEI",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Ehsan HAJI SAFI",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Morteza POURALIGANJI",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Reza GHOOCHANNEJAD",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Japan",
+      "continent": "AFC",
+      "players": [
+        {
+          "name": "Yasuyuki KONNO",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Mike HAVENAAR",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Manabu SAITO",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Yuki KOBAYASHI",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Takumi MINAMINO",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Hiroki FUJIHARU",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Yu KOBAYASHI",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Yuichi MARUYAMA",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Takuma ASANO",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Ryota OSHIMA",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Yojiro TAKAHAGI",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Saudi Arabia",
+      "continent": "AFC",
+      "players": [
+        {
+          "name": "ASSAF AL QARNI",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "WALEED ABDULLAH",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "FAHAD AL MUWALLAD",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "MOHAMMED ALFATIL",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "MANSOUR ALHARBI",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "SAEED AL MOWALAD",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "MOHAMMED ALOWAIS",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "MOHAMMED ALBURAYK",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "ALI AWAJI",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Abdullah ALMAYOUF",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "TAISEER AL JASSAM",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Korea Republic",
+      "continent": "AFC",
+      "players": [
+        {
+          "name": "LEE Donggook",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "LEE Keunho",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "KOH Myongjin",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "KIM Bokyung",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "HWANG Uijo",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "YUN Young Sun",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "KIM Keehee",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "KIM Dongjun",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "LEE Myungjoo",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Kim MINJAE",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "YEOM Ki Hun",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Egypt",
+      "continent": "CAF",
+      "players": [
+        {
+          "name": "ESSAM EL HADARY",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Abdallah SAIED",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "ABDALLA SAID",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "WALID SOLIMAN",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "SAADELDIN SAAD",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "MOHAMED SALAH",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "RABIA RAMY",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "AHMED MEKKY",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "TREZEGET",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "AMR GAMAL",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "TAREK HAMED",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Morocco",
+      "continent": "CAF",
+      "players": [
+        {
+          "name": "Mohammed BOURKADI",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Aziz BENASKAR",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Nabil DIRAR",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Younes BELHANDA",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ahmed TAGNAOUTI",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Monir EL KAJOUI",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Moestafa EL KABIR",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Romain SAISS",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Yunis ABDELHAMID",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Rachid ALIOUI",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Faycal RHERRAS",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Nigeria",
+      "continent": "CAF",
+      "players": [
+        {
+          "name": "Obafemi MARTINS",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Uwa ECHIEJILE",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Brown IDEYE",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Odion IGHALO",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Orji KALU",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Nosa IGIEBOR",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Uche AGBO",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Musa MUHAMMED",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Ndubisi AGU",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Oghenekaro ETEBO",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Chima AKAS",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Senegal",
+      "continent": "CAF",
+      "players": [
+        {
+          "name": "Alfred NDIAYE",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Lamine GASSAMA",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Fallou DIAGNE",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Papa Alioune NDIAYE",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Mohamed DIAME",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Cheikhou KOUYATE",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Famara DIEDHIOU",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Salif SANE",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Abdoulaye DIALLO",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Issa SARR",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Ismaila SARR",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Tunisia",
+      "continent": "CAF",
+      "players": [
+        {
+          "name": "Hamdi HARBAOUI",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Hamza LAHMAR",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Aymen ABDENNOUR",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ahmed AKAICHI",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Taha KHENISSI",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Ali MAALOUL",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Anis BEN HATIRA",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Fakhreddine BEN YOUSSEF",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Bilel MOHSNI",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Karim AOUADHI",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Ali MACHANI",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Costa Rica",
+      "continent": "CONCACAF",
+      "players": [
+        {
+          "name": "Pablo SALAZAR",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Keylor NAVAS",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Michael UMANA",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Celso BORGES",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Esteban ALVARADO",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Bryan OVIEDO",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Kenner GUTIERREZ",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Yeltsin TEJEDA",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Heiner MORA",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Francisco CALVO",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Nestor MONGE",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "continent": "CONCACAF",
+      "players": [
+        {
+          "name": "Alfredo TALAVERA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Moises MUNOZ",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Jorge TORRES",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Carlos VELA",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Rodolfo COTA",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Luis MONTES",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Hugo AYALA",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Marco FABIAN",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Elias HERNANDEZ",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Candido RAMIREZ",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Rodolfo PIZARRO",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Panama",
+      "continent": "CONCACAF",
+      "players": [
+        {
+          "name": "Jose CALDERON",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Blas PEREZ",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Ricardo BUITRAGO",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Luis OVALLE",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Alberto QUINTERO",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Roberto CHEN",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Harold CUMMINGS",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Renan ADDLES",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Jean Carlos CEDENO",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Ismael DIAZ",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Josiel NUNEZ",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Argentina",
+      "continent": "CONMEBOL",
+      "players": [
+        {
+          "name": "Javier PINOLA",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Lucas BIGLIA",
+          "number": 2,
+          "position": "DF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Sergio AGUERO",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Guido PIZARRO",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Gonzalo HIGUAIN",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Augusto FERNANDEZ",
+          "number": 6,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Matias CARUZZO",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Erik LAMELA",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Angel DI MARIA",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Lionel MESSI",
+          "number": 10,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Federico FAZIO",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Brazil",
+      "continent": "CONMEBOL",
+      "players": [
+        {
+          "name": "Neymar da Silva",
+          "number": 10,
+          "position": "FW",
+          "role": "Captain"
+        },
+        {
+          "name": "Diego Alves",
+          "number": 1,
+          "position": "GK",
+          "role": "Member"
+        },
+        {
+          "name": "Thiago Emiliano da Silva",
+          "number": 14,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Dani Alves da Silva",
+          "number": 2,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Marquinhos",
+          "number": 13,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Renato Soares de Oliveira Augusto",
+          "number": 8,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Elias Constantino Pereira Filho",
+          "number": 15,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Philippe Coutinho",
+          "number": 11,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Lucas Lima",
+          "number": 20,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Giuliano",
+          "number": 18,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Roberto Firmino",
+          "number": 21,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Colombia",
+      "continent": "CONMEBOL",
+      "players": [
+        {
+          "name": "Andres Leandro Castellanos",
+          "number": 22,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Cristian Eduardo Zapata Valencia",
+          "number": 2,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Santiago Arias",
+          "number": 4,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "NStefan Medina",
+          "number": 15,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Frank Fabra",
+          "number": 18,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Juan Guillermo Cuadrado",
+          "number": 11,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Giovanni Moreno",
+          "number": 20,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "James Rodriguez",
+          "number": 10,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Edwin Andres Cardona Bedoya",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Zapata",
+          "number": 19,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Carlos Bacca",
+          "number": 7,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Peru",
+      "continent": "CONMEBOL",
+      "players": [
+        {
+          "name": "Pedro Gallese",
+          "number": 1,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Christian Ramos",
+          "number": 15,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Miguel Angel Trauco Saavedra",
+          "number": 6,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Nilson Evair Loyola Morales",
+          "number": 22,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Adrian Zela Terry",
+          "number": 5,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Renato Fabrizio Tapia Cortijo",
+          "number": 13,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Pedro Jesus Aquino Sanches",
+          "number": 23,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Sergio Pena Flores",
+          "number": 16,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Jose Miguel Manzaneda Pineda",
+          "number": 7,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Joel Sanchez",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Addison DE flores",
+          "number": 20,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "name": "Uruguay",
+      "continent": "CONMEBOL",
+      "players": [
+        {
+          "name": "Martin SILVA",
+          "number": 23,
+          "position": "GK",
+          "role": "Captain"
+        },
+        {
+          "name": "Diego Godin",
+          "number": 3,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Gaston SILVA",
+          "number": 13,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Guillermo VARELA",
+          "number": 24,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Sebastian Coates",
+          "number": 19,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Maximiliano PEREIRA",
+          "number": 16,
+          "position": "DF",
+          "role": "Member"
+        },
+        {
+          "name": "Alvaro Gonzalez",
+          "number": 20,
+          "position": "MF",
+          "role": "Member"
+        },
+        {
+          "name": "Cristian RODRIGUEZ",
+          "number": 7,
+          "position": "MF",
+          "role": "ViceCaptain"
+        },
+        {
+          "name": "Christian Stuani",
+          "number": 11,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Maximiliano GOMEZ",
+          "number": 18,
+          "position": "FW",
+          "role": "Member"
+        },
+        {
+          "name": "Gaston PEREIRO",
+          "number": 9,
+          "position": "FW",
+          "role": "Member"
+        }
+      ]
     }
   ],
   "groups": [
     [
       "Russia",
-      "Germany",
       "England",
-      "France"
+      "Egypt",
+      "Japan"
     ],
-    []
+    [
+      "Germany",
+      "Spain",
+      "Iran",
+      "Nigeria"
+    ],
+    [
+      "Brazil",
+      "Switzerland",
+      "Denmark",
+      "Australia"
+    ],
+    [
+      "Portugal",
+      "Peru",
+      "Iceland",
+      "Panama"
+    ],
+    [
+      "Argentina",
+      "Croatia",
+      "Sweden",
+      "Morocco"
+    ],
+    [
+      "Belgium",
+      "Mexico",
+      "Tunisia",
+      "Serbia"
+    ],
+    [
+      "Poland",
+      "Uruguay",
+      "Senegal",
+      "Saudi Arabia"
+    ],
+    [
+      "France",
+      "Colombia",
+      "Costa Rica",
+      "South Korea"
+    ]
   ],
   "time_address": [
     {
