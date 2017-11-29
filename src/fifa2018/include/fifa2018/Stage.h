@@ -12,18 +12,38 @@ class Match;
 
 class Stage {
 public:
-    explicit Stage(std::vector<shared_ptr<Match>> schedule);
+    explicit Stage(const std::string &label,
+        std::vector<std::shared_ptr<Match>> &schedule);
 
     virtual ~Stage() = default;
 
-    void operator()();
+    // 执行这个阶段的比赛。返回下一阶段的比赛计划
+    std::vector<std::shared_ptr<Match>> operator()();
 
 protected:
-    virtual void showCandidateTeams(std::ostream &out);
+	// 下面这些虚函数，子类根据需要重写。
 
-    virtual void showSchedule(std::ostream &out);
+    // 阶段1：输出日程安排（schedule_x.txt)
+    virtual void printSchedule(const std::string &fileName);
+
+    virtual std::string showSingleMatchPlan();
+
+    // 阶段2：各场比赛过程（在标准输出显示直播）
+    virtual void runMatches(const std::string &fileName);
+
+    // 阶段3：输出统计结果（到文件）
+    virtual void printStatistics(const std::string &fileName);
+
+    // 阶段4：输出晋级球队（到文件）
+    virtual void printWinners(const std::string &fileName);
+
 private:
-    std::vector<shared_ptr<Match>> schedule;
+    std::string label;
+    std::vector<std::shared_ptr<Match>> schedule;
+};
+
+class GroupMatchStage : public Stage {
+
 };
 
 }
