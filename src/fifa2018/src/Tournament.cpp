@@ -5,6 +5,8 @@
 #include <ctime>
 #include <cstdint>
 #include <algorithm>
+#include <fstream>
+#include <cstdio>
 
 namespace fifa2018 {
 
@@ -31,6 +33,18 @@ void Tournament::readConfig() {
 void Tournament::runGroupMatch() {
     // TODO runGroupMatch
     // 执行小组赛
+	// The first 48 matches are group match. Each 6 matches belongs to a group.
+	const int GROUP_MATCHES = 6;
+	const int GROUPS = 8;
+
+	std::FILE *schedule16 = std::fopen("schedule16.txt", "w");
+
+	std::fprintf(schedule16, "Matches by squads\n");
+	for (int currentGroup = 1; currentGroup <= GROUPS; ++currentGroup) {
+		char groupLabel = static_cast<char>('A' + (currentGroup - 1));
+		std::fprintf(schedule16, "Group %c\n", groupLabel);
+	}
+	
 }
 
 void Tournament::runRemainingMatches() {
