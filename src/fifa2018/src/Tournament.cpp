@@ -37,12 +37,18 @@ void Tournament::runGroupMatch() {
     // TODO runGroupMatch
     // 执行小组赛
     // The first 48 matches are group match. Each 6 matches belongs to a group.
-    std::ofstream out("schedule16.txt", std::ofstream::out);
+    {
+        std::ofstream schedule("schedule16.txt", std::ofstream::out);
+        showGroupMatchByGroup(schedule);
+        showGroupMatchByDate(schedule);
 
-    showGroupMatchByGroup(out);
-    showGroupMatchByDate(out);
+    }
 
-    out << "Group stage:\n";
+    {
+        std::ofstream procedure("procedure16.txt", std::ofstream::out);
+        procedure << "Group stage:\n";
+        
+    }
 }
 
 void Tournament::runRemainingMatches() {
