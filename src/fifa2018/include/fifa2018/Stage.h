@@ -1,5 +1,6 @@
 #pragma once
 
+#include <utility>
 #include <vector>
 #include <memory>
 #include <ostream>
@@ -34,6 +35,7 @@ public:
 private:
     std::map<std::shared_ptr<Team>, Statistics> result;
 
+protected:
     std::vector<std::shared_ptr<Team>> winners;
 
 protected:
@@ -69,10 +71,21 @@ protected:
 };
 
 class GroupMatchStage : public Stage {
+private:
+    std::vector<std::vector<std::shared_ptr<Team>>> groups;
 public:
     GroupMatchStage(const std::string &label,
-                    std::vector<std::shared_ptr<Match>> &schedule)
-            : Stage(label, schedule) {}
+                    std::vector<std::shared_ptr<Match>> &schedule,
+                    std::vector<std::vector<std::shared_ptr<Team>>> groups)
+            : Stage(label, schedule), groups(std::move(groups)) {}
+
+    std::string stageFullName() const override;
+
+    void afterTitle(std::ofstream &out) override;
+
+    void printStatistics(const std::string &fileName) override;
+
+    void scheduleOfNextStage(std::vector<std::shared_ptr<Match>> &schedule) override;
 };
 
 }
