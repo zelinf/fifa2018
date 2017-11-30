@@ -1,5 +1,6 @@
 #include <fifa2018/Tournament.h>
 #include <json/json.hpp>
+#include <map>
 #include <fifa2018/Team.h>
 #include <fifa2018/Player.h>
 #include <ctime>
@@ -47,38 +48,40 @@ private:
     std::ostream &os2;
 };
 
-std::vector<std::vector<std::shared_ptr<Team>>> Tournament::readGroups(const nlohmann::json &config) {
-    // TODO
-
-}
-
 void Tournament::runTournament() {
     readConfig();
+    std::function<void(std::shared_ptr<Player>)> addGoalForPlayer = [&](std::shared_ptr<Player> player) {
+        ++playerGoals[player];
+    };
 
     std::vector<std::shared_ptr<Match>> scheduleOfGroupMatch = popMatches(MATCHES_IN_EACH_GROUP * GROUPS);
     configGroupMatch(config, scheduleOfGroupMatch);
     std::shared_ptr<Stage> groupStage = std::make_shared<GroupMatchStage>(
-            "group",
+            "16",
             scheduleOfGroupMatch,
             groups);
+    groupStage->setAddGoalForPlayer(addGoalForPlayer);
     (*groupStage)();
     sumStatistics(groupStage->getResult());
 
     auto scheduleOf16 = popMatches(8);
     groupStage->scheduleOfNextStage(scheduleOf16);
     std::shared_ptr<Stage> stage16 = std::make_shared<Stage>("8", scheduleOf16);
+    stage16->setAddGoalForPlayer(addGoalForPlayer);
     (*stage16)();
     sumStatistics(stage16->getResult());
 
     auto scheduleOf8 = popMatches(4);
     stage16->scheduleOfNextStage(scheduleOf8);
     std::shared_ptr<Stage> stage8 = std::make_shared<Stage>("4", scheduleOf8);
+    stage8->setAddGoalForPlayer(addGoalForPlayer);
     (*stage8)();
     sumStatistics(stage8->getResult());
 
     auto scheduleOf4 = popMatches(2);
     stage8->scheduleOfNextStage(scheduleOf4);
     std::shared_ptr<Stage> stage4 = std::make_shared<Stage>("2", scheduleOf4);
+    stage4->setAddGoalForPlayer(addGoalForPlayer);
     (*stage4)();
     sumStatistics(stage4->getResult());
 
@@ -88,6 +91,7 @@ void Tournament::runTournament() {
     scheduleOfFinals[1]->setTeamA(stage4->getWinners()[0]);
     scheduleOfFinals[1]->setTeamB(stage4->getWinners()[1]);
     std::shared_ptr<FinalStage> stageFinal = std::make_shared<FinalStage>("1", scheduleOfFinals);
+    stageFinal->setAddGoalForPlayer(addGoalForPlayer);
     (*stageFinal)();
     sumStatistics(stageFinal->getResult());
 
@@ -100,6 +104,25 @@ void Tournament::runTournament() {
     out << '\n';
     stageFinal->printAllStatistics(teamStatistics, out);
 
+    out << '\n';
+    out << "Goalscorers:\n";
+    {
+        std::multimap<int32_t, std::string, std::greater<>> goalToPlayer;
+        for (const auto &pair : playerGoals) {
+            goalToPlayer.insert({pair.second, fmt::format("{}, {}, {}",
+                                                         pair.first->getName(),
+                                                         positionToString(pair.first->getPosition()),
+                                                         pair.first->getTeam()->getName())});
+        }
+        int32_t currentGoal = -1;
+        for (const auto &pair : goalToPlayer) {
+            if (currentGoal != pair.first) {
+                currentGoal = pair.first;
+                out << fmt::format("{} goals\n", currentGoal);
+            }
+            out << pair.second << '\n';
+        }
+    }
 }
 
 Player::Position strToPosition(const std::string &str) {

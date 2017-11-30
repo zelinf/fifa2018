@@ -62,19 +62,6 @@ void Stage::afterTitle(std::ofstream &out) {
     // No operation.
 }
 
-std::string positionToString(Player::Position pos) {
-    switch (pos) {
-        case Player::Position::GK:
-            return "GK";
-        case Player::Position::DF:
-            return "DF";
-        case Player::Position::MF:
-            return "MF";
-        case Player::Position::FW:
-            return "FW";
-    }
-}
-
 std::string roleToString(Player::Role role) {
     switch (role) {
         case Player::Role::Captain:
@@ -122,7 +109,7 @@ void printTeamInfo(StreamCompose &writer, std::shared_ptr<Team> team) {
 }
 
 void Stage::runMatches(const std::string &fileName) {
-    std::ofstream fileStream(fileName, std::ofstream::out);
+    std::ofstream fileStream(fileName, std::ofstream::app);
     StreamCompose writer(fileStream, std::cout);
 
     writer.print(fmt::format("Current stage: {}\n", stageFullName()));
@@ -139,7 +126,7 @@ void Stage::runMatches(const std::string &fileName) {
         match->runMatch([&writer, this, &match](std::shared_ptr<Player> goalMaker,
                                                 std::shared_ptr<Team> theOtherTeam) {
             goalMaker->getTeam()->getName();
-
+            addGoalForPlayer(goalMaker);
             writer.print(fmt::format("{} did a goal, and it was #{}, {} did the goal.\n",
                                      goalMaker->getTeam()->getName(),
                                      goalMaker->getNumber(),

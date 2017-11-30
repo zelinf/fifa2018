@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include <functional>
 #include <vector>
 #include <memory>
 #include <ostream>
@@ -14,6 +15,8 @@ namespace fifa2018 {
 class Match;
 
 class Team;
+
+class Player;
 
 class Stage {
 public:
@@ -74,6 +77,13 @@ protected:
     std::string &labelRef() { return label; }
 
     std::vector<std::shared_ptr<Match>> &scheduleRef() { return schedule; };
+
+    std::function<void(std::shared_ptr<Player>)> addGoalForPlayer;
+
+public:
+    void setAddGoalForPlayer(std::function<void(std::shared_ptr<Player>)> newFunc) {
+        addGoalForPlayer = std::move(newFunc);
+    }
 };
 
 class GroupMatchStage : public Stage {
