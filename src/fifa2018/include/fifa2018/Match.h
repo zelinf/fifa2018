@@ -41,8 +41,8 @@ public:
     /**
      * 模拟这场比赛，执行完这个方法后才可以调用返回比赛结果的方法
      */
-    void runMatch(std::function<void(std::shared_ptr<Player>)> onNewGoal =
-        std::function<void(std::shared_ptr<Player>)>());
+    void runMatch(std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)> onNewGoal =
+        std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)>());
 
 private:
     bool hasRun = false;
@@ -54,7 +54,7 @@ private:
                             "the execution of this method.");
     }
 
-    std::function<void(std::shared_ptr<Player>)> onNewGoal;
+    std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)> onNewGoal;
 
 public:
 

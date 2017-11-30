@@ -6,6 +6,7 @@
 #include <deque>
 #include <fifa2018/Match.h>
 #include <json/json.hpp>
+#include <fifa2018/Statistics.h>
 
 namespace fifa2018 {
 
@@ -53,7 +54,7 @@ private:
     // 剩余要进行的比赛 (back进，front出）
     std::deque<Match> remainingMatches;
     // 各个队伍获得的积分
-    std::map<std::shared_ptr<Team>, int32_t> teamScores;
+    std::map<std::shared_ptr<Team>, Statistics> teamStatistics;
     // 各个球员的进球数
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
     // 冠军、亚军、季军

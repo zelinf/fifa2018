@@ -33,6 +33,22 @@ void Tournament::readConfig() {
     }
 }
 
+class StreamCompose {
+public:
+    StreamCompose(std::ostream &os1, std::ostream &os2)
+            : os1(os1), os2(os2) {}
+
+    void print(const std::string &content) {
+        os1 << content;
+        os2 << content;
+    }
+
+private:
+    std::ostream &os1;
+    std::ostream &os2;
+};
+
+
 void Tournament::runGroupMatch() {
     // TODO runGroupMatch
     // 执行小组赛
@@ -41,13 +57,12 @@ void Tournament::runGroupMatch() {
         std::ofstream schedule("schedule16.txt", std::ofstream::out);
         showGroupMatchByGroup(schedule);
         showGroupMatchByDate(schedule);
-
     }
 
     {
         std::ofstream procedure("procedure16.txt", std::ofstream::out);
         procedure << "Group stage:\n";
-        
+
     }
 }
 
@@ -184,12 +199,12 @@ void Tournament::configGroupMatch(const nlohmann::json &config) {
 
 std::shared_ptr<Team> Tournament::findTeam(const std::string &teamName) const {
 
-    auto team_it = std::find_if(teamScores.cbegin(), teamScores.cend(),
+    auto team_it = std::find_if(teamStatistics.cbegin(), teamStatistics.cend(),
                                 [&teamName](const auto &pair) {
                                     return pair.first->getName() == teamName;
                                 }
     );
-    if (team_it == teamScores.cend()) {
+    if (team_it == teamStatistics.cend()) {
         throw InvalidConfigException();
     }
     return team_it->first;

@@ -3,6 +3,8 @@
 #include <vector>
 #include <memory>
 #include <ostream>
+#include <fifa2018/Statistics.h>
+#include <map>
 
 using std::shared_ptr;
 
@@ -10,40 +12,67 @@ namespace fifa2018 {
 
 class Match;
 
+class Team;
+
 class Stage {
 public:
     explicit Stage(const std::string &label,
-        std::vector<std::shared_ptr<Match>> &schedule);
+                   std::vector<std::shared_ptr<Match>> &schedule);
 
     virtual ~Stage() = default;
 
-    // Ö´ĞĞÕâ¸ö½×¶ÎµÄ±ÈÈü¡£·µ»ØÏÂÒ»½×¶ÎµÄ±ÈÈü¼Æ»®
-    std::vector<std::shared_ptr<Match>> operator()();
+    // æ‰§è¡Œè¿™ä¸ªé˜¶æ®µçš„æ¯”èµ›ã€‚è¿”å›ä¸‹ä¸€é˜¶æ®µçš„æ¯”èµ›è®¡åˆ’
+    void operator()();
+
+    // ä¸ºä¸‹ä¸€é˜¶æ®µæ¯”èµ›é…ç½®æ—¥ç¨‹ã€‚ä¼ å…¥çš„scheduleåº”å½“å·²ç»é…ç½®å¥½æ—¥ç¨‹ï¼Œ
+    // è¿™ä¸ªæ–¹æ³•è´Ÿè´£é…ç½®å¯¹æˆ˜é˜Ÿä¼
+    virtual void scheduleOfNextStage(std::vector<std::shared_ptr<Match>> &schedule);
+
+    // è¿”å›å½“å‰é˜¶æ®µçš„ç»Ÿè®¡æ•°æ®ï¼Œå³æ¯æ”¯é˜Ÿä¼çš„èƒœåˆ©ã€å¾—åˆ†æƒ…å†µ
+    std::map<std::shared_ptr<Team>, Statistics> getResult() const { return result; };
+
+private:
+    std::map<std::shared_ptr<Team>, Statistics> result;
+
+    std::vector<std::shared_ptr<Team>> winners;
 
 protected:
-	// ÏÂÃæÕâĞ©Ğéº¯Êı£¬×ÓÀà¸ù¾İĞèÒªÖØĞ´¡£
+    // ä¸‹é¢è¿™äº›è™šå‡½æ•°ï¼Œå­ç±»æ ¹æ®éœ€è¦é‡å†™ã€‚
+    virtual std::string stageFullName() const;
 
-    // ½×¶Î1£ºÊä³öÈÕ³Ì°²ÅÅ£¨schedule_x.txt)
+    // é˜¶æ®µ1ï¼šè¾“å‡ºæ—¥ç¨‹å®‰æ’ï¼ˆschedule_x.txt)
     virtual void printSchedule(const std::string &fileName);
 
-    virtual std::string showSingleMatchPlan();
+    virtual void afterTitle(std::ofstream &out); // è¾“å‡ºå®Œæ—¥ç¨‹æ ‡é¢˜æ‰§è¡Œè¿™ä¸ªæ–¹æ³•
 
-    // ½×¶Î2£º¸÷³¡±ÈÈü¹ı³Ì£¨ÔÚ±ê×¼Êä³öÏÔÊ¾Ö±²¥£©
+    // é˜¶æ®µ2ï¼šå„åœºæ¯”èµ›è¿‡ç¨‹ï¼ˆåœ¨æ ‡å‡†è¾“å‡ºæ˜¾ç¤ºç›´æ’­ï¼‰
     virtual void runMatches(const std::string &fileName);
 
-    // ½×¶Î3£ºÊä³öÍ³¼Æ½á¹û£¨µ½ÎÄ¼ş£©
+    // é˜¶æ®µ3ï¼šè¾“å‡ºç»Ÿè®¡ç»“æœï¼ˆåˆ°æ–‡ä»¶ï¼‰
     virtual void printStatistics(const std::string &fileName);
 
-    // ½×¶Î4£ºÊä³ö½ú¼¶Çò¶Ó£¨µ½ÎÄ¼ş£©
+    virtual std::string showStatisticsTableHeading();
+
+    virtual std::string showStatisticsOfTeam(std::shared_ptr<Team>, const Statistics &statistics);
+
+    // é˜¶æ®µ4ï¼šè¾“å‡ºæ™‹çº§çƒé˜Ÿï¼ˆåˆ°æ–‡ä»¶ï¼‰
     virtual void printWinners(const std::string &fileName);
 
 private:
     std::string label;
     std::vector<std::shared_ptr<Match>> schedule;
+
+protected:
+    std::string &labelRef() { return label; }
+
+    std::vector<std::shared_ptr<Match>> &scheduleRef() { return schedule; };
 };
 
 class GroupMatchStage : public Stage {
-
+public:
+    GroupMatchStage(const std::string &label,
+                    std::vector<std::shared_ptr<Match>> &schedule)
+            : Stage(label, schedule) {}
 };
 
 }

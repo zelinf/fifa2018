@@ -12,7 +12,7 @@ void Match::randomPlayerGoal(std::shared_ptr<Team> team) {
     int32_t playerIndex = randomGen
             .next(0, static_cast<int32_t>(team->getPlayers().size()));
     ++playerGoals[team->getPlayers()[playerIndex]];
-    onNewGoal(team->getPlayers()[playerIndex]);
+    onNewGoal(team->getPlayers()[playerIndex], team == teamA ? teamB : teamA);
 }
 
 void Match::randomGoal(bool must) {
@@ -31,7 +31,7 @@ void Match::randomGoal(bool must) {
     }
 }
 
-void Match::runMatch(std::function<void(std::shared_ptr<Player>)> onNewGoal) {
+void Match::runMatch(std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)> onNewGoal) {
     hasRun = true;
     this->onNewGoal = std::move(onNewGoal);
 
