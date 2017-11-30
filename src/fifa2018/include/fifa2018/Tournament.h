@@ -50,8 +50,6 @@ private:
     std::map<std::shared_ptr<Team>, Statistics> teamStatistics;
     // 各个球员的进球数
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
-    // 冠军、亚军、季军
-    std::vector<std::shared_ptr<Team>> topThree;
 
     void readTeams(const nlohmann::json &config);
 
@@ -63,10 +61,6 @@ private:
 
     static const int MATCHES_IN_EACH_GROUP = 6;
     static const int GROUPS = 8;
-
-    void showGroupMatchByGroup(std::ostream &out) const;
-
-    void showGroupMatchByDate(std::ostream &out) const;
 
     std::vector<std::vector<std::shared_ptr<Team>>> groups;
 

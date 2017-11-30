@@ -32,11 +32,17 @@ public:
     // 返回当前阶段的统计数据，即每支队伍的胜利、得分情况
     std::map<std::shared_ptr<Team>, Statistics> getResult() const { return result; };
 
+    std::vector<std::shared_ptr<Team>> getWinners();
+
+    std::vector<std::shared_ptr<Team>> getLosers();
+
 private:
     std::map<std::shared_ptr<Team>, Statistics> result;
 
 protected:
     std::vector<std::shared_ptr<Team>> winners;
+
+    std::vector<std::shared_ptr<Team>> losers;
 
 protected:
     // 下面这些虚函数，子类根据需要重写。
@@ -76,9 +82,9 @@ private:
 public:
     GroupMatchStage(const std::string &label,
                     std::vector<std::shared_ptr<Match>> &schedule,
-                    std::vector<std::vector<std::shared_ptr<Team>>> groups)
-            : Stage(label, schedule), groups(std::move(groups)) {}
+                    std::vector<std::vector<std::shared_ptr<Team>>> groups);
 
+protected:
     std::string stageFullName() const override;
 
     void afterTitle(std::ofstream &out) override;
@@ -86,6 +92,32 @@ public:
     void printStatistics(const std::string &fileName) override;
 
     void scheduleOfNextStage(std::vector<std::shared_ptr<Match>> &schedule) override;
+};
+
+class FinalStage : public Stage {
+public:
+    FinalStage(const std::string &label, std::vector<std::shared_ptr<Match>> &schedule)
+            : Stage(label, schedule) {}
+
+protected:
+    std::string stageFullName() const override {
+        return "final";
+    }
+
+    void afterTitle(std::ofstream &out) override;
+
+    void printWinners(const std::string &fileName) override;
+
+    void printStatistics(const std::string &fileName) override;
+
+public:
+    void printAllStatistics(const std::map<std::shared_ptr<Team>, Statistics> &stat,
+                            std::ofstream &out);
+
+    std::vector<std::shared_ptr<Team>> getTop3();
+
+private:
+    std::vector<std::shared_ptr<Team>> top3;
 };
 
 }

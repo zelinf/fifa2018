@@ -159,10 +159,12 @@ void Stage::runMatches(const std::string &fileName) {
             result[teamA].addWin();
             result[teamB].addLose();
             winners.push_back(teamA);
+            losers.push_back(teamB);
         } else if (match->goalOfTeamA() < match->goalOfTeamB()) {
             result[teamA].addLose();
             result[teamB].addWin();
             winners.push_back(teamB);
+            losers.push_back(teamA);
         } else {
             result[teamA].addDraw();
             result[teamB].addDraw();
@@ -222,6 +224,14 @@ void Stage::scheduleOfNextStage(std::vector<std::shared_ptr<Match>> &schedule) {
     }
 }
 
+std::vector<std::shared_ptr<Team>> Stage::getWinners() {
+    return winners;
+}
+
+std::vector<std::shared_ptr<Team>> Stage::getLosers() {
+    return losers;
+}
+
 std::string GroupMatchStage::stageFullName() const {
     return "group";
 }
@@ -262,16 +272,21 @@ void GroupMatchStage::printStatistics(const std::string &fileName) {
 
     // 更正winners. 小组赛的胜者是根据积分决定的，而不是默认的淘汰制
     winners.clear();
+    losers.clear();
     for (const std::vector<std::shared_ptr<Team>> &group : groups) {
         std::vector<std::pair<std::shared_ptr<Team>, Statistics>> groupStat;
         for (auto team : group) {
             groupStat.push_back({team, getResult()[team]});
         }
         std::sort(groupStat.begin(), groupStat.end(), [](const auto &lhs, const auto &rhs) {
-            return rhs.second < lhs.second;
+            return lhs.second < rhs.second;
         });
         winners.push_back(groupStat[0].first);
         winners.push_back(groupStat[1].first);
+
+        for (int32_t i = 2; i < groupStat.size(); ++i) {
+            losers.push_back(groupStat[i].first);
+        }
     }
 }
 
@@ -298,6 +313,81 @@ void GroupMatchStage::scheduleOfNextStage(std::vector<std::shared_ptr<Match>> &s
     schedule[6]->setTeamB(winners[15]);
     schedule[7]->setTeamA(winners[14]);
     schedule[7]->setTeamB(winners[13]);
+}
+
+GroupMatchStage::GroupMatchStage(const std::string &label, std::vector<std::shared_ptr<Match>> &schedule,
+                                 std::vector<std::vector<std::shared_ptr<Team>>> groups)
+        : Stage(label, schedule), groups(std::move(groups)) {
+    for (std::shared_ptr<Match> match : schedule) {
+        match->setAllowDraw();
+    }
+}
+
+void FinalStage::afterTitle(std::ofstream &out) {
+    out << "The second one is the final.\n";
+}
+
+void FinalStage::printWinners(const std::string &fileName) {
+    std::ofstream out(fileName, std::ofstream::out);
+    out << "The winner is:\n";
+    if (scheduleRef()[1]->goalOfTeamA() > scheduleRef()[1]->goalOfTeamB()) {
+        out << scheduleRef()[1]->getTeamA()->getName();
+    } else {
+        out << scheduleRef()[1]->getTeamB()->getName();
+    }
+    out << '\n';
+}
+
+void FinalStage::printStatistics(const std::string &fileName) {
+    std::ofstream out(fileName, std::ofstream::out);
+    out << "1st vs 2nd\n";
+    out << showStatisticsTableHeading() << '\n';
+    {
+        std::shared_ptr<Team> teamA = scheduleRef()[1]->getTeamA();
+        out << showStatisticsOfTeam(teamA, getResult()[teamA]) << '\n';
+        std::shared_ptr<Team> teamB = scheduleRef()[1]->getTeamB();
+        out << showStatisticsOfTeam(teamB, getResult()[teamB]) << '\n';
+    }
+    out << "\n";
+
+    out << "3rd vs 4th\n";
+    out << showStatisticsTableHeading() << '\n';
+    {
+        std::shared_ptr<Team> teamA = scheduleRef()[0]->getTeamA();
+        out << showStatisticsOfTeam(teamA, getResult()[teamA]) << '\n';
+        std::shared_ptr<Team> teamB = scheduleRef()[0]->getTeamB();
+        out << showStatisticsOfTeam(teamB, getResult()[teamB]) << '\n';
+    }
+    out << "\n";
+}
+
+void FinalStage::printAllStatistics(const std::map<std::shared_ptr<Team>, Statistics> &stat, std::ofstream &out) {
+    std::vector<std::pair<std::shared_ptr<Team>, Statistics>> statList(stat.cbegin(), stat.cend());
+    std::sort(statList.begin(), statList.end(), [](const auto &lhs, const auto &rhs) {
+        return lhs.second < rhs.second;
+    });
+
+    out << showStatisticsTableHeading() << '\n';
+    for (int32_t i = 0; i < 10; ++i) {
+        out << showStatisticsOfTeam(statList[i].first, statList[i].second) << '\n';
+    }
+}
+
+std::vector<std::shared_ptr<Team>> FinalStage::getTop3() {
+    if (scheduleRef()[1]->goalOfTeamA() > scheduleRef()[1]->goalOfTeamB()) {
+        top3.push_back(scheduleRef()[1]->getTeamA());
+        top3.push_back(scheduleRef()[1]->getTeamB());
+    } else {
+        top3.push_back(scheduleRef()[1]->getTeamB());
+        top3.push_back(scheduleRef()[1]->getTeamA());
+    }
+
+    if (scheduleRef()[0]->goalOfTeamA() > scheduleRef()[0]->goalOfTeamB()) {
+        top3.push_back(scheduleRef()[0]->getTeamA());
+    } else {
+        top3.push_back(scheduleRef()[0]->getTeamB());
+    }
+    return top3;
 }
 
 }

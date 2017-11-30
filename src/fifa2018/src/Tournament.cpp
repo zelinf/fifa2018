@@ -64,10 +64,41 @@ void Tournament::runTournament() {
     (*groupStage)();
     sumStatistics(groupStage->getResult());
 
-    // TODO
     auto scheduleOf16 = popMatches(8);
     groupStage->scheduleOfNextStage(scheduleOf16);
-    std::shared_ptr<Stage> stage16 = std::make_shared<Stage>("16", scheduleOf16);
+    std::shared_ptr<Stage> stage16 = std::make_shared<Stage>("8", scheduleOf16);
+    (*stage16)();
+    sumStatistics(stage16->getResult());
+
+    auto scheduleOf8 = popMatches(4);
+    stage16->scheduleOfNextStage(scheduleOf8);
+    std::shared_ptr<Stage> stage8 = std::make_shared<Stage>("4", scheduleOf8);
+    (*stage8)();
+    sumStatistics(stage8->getResult());
+
+    auto scheduleOf4 = popMatches(2);
+    stage8->scheduleOfNextStage(scheduleOf4);
+    std::shared_ptr<Stage> stage4 = std::make_shared<Stage>("2", scheduleOf4);
+    (*stage4)();
+    sumStatistics(stage4->getResult());
+
+    auto scheduleOfFinals = popMatches(2);
+    scheduleOfFinals[0]->setTeamA(stage4->getLosers()[0]);
+    scheduleOfFinals[0]->setTeamB(stage4->getLosers()[1]);
+    scheduleOfFinals[1]->setTeamA(stage4->getWinners()[0]);
+    scheduleOfFinals[1]->setTeamB(stage4->getWinners()[1]);
+    std::shared_ptr<FinalStage> stageFinal = std::make_shared<FinalStage>("1", scheduleOfFinals);
+    (*stageFinal)();
+    sumStatistics(stageFinal->getResult());
+
+    // 输出统计信息
+    auto top3 = stageFinal->getTop3();
+    std::ofstream out("finalStatistics.txt", std::ofstream::out);
+    out << "1st: " << top3[0]->getName() << '\n';
+    out << "2nd: " << top3[1]->getName() << '\n';
+    out << "3rd: " << top3[2]->getName() << '\n';
+    out << '\n';
+    stageFinal->printAllStatistics(teamStatistics, out);
 
 }
 
