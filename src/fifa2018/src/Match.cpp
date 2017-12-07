@@ -45,14 +45,14 @@ void Match::runMatch(std::function<void(std::shared_ptr<Player>, std::shared_ptr
     }
 }
 
-int32_t Match::goalOfTeamA() const {
+int32_t Match::goalOfTeamA() {
     requireMatchRun();
-    return teamGoals.find(teamA)->second;
+    return teamGoals[teamA];
 }
 
-int32_t Match::goalOfTeamB() const {
+int32_t Match::goalOfTeamB() {
     requireMatchRun();
-    return teamGoals.find(teamB)->second;
+    return teamGoals[teamB];
 }
 
 const std::map<std::shared_ptr<Player>, int32_t> &Match::goalOfPlayers() const {
@@ -65,13 +65,13 @@ Match::Match(std::shared_ptr<Team> teamA,
              std::string address,
              const time_type &time,
              bool allowDraw)
-        : teamA(std::move(teamA)),
-          teamB(std::move(teamB)),
+        : teamA(teamA),
+          teamB(teamB),
           address(std::move(address)),
           time(time),
           allowDraw(allowDraw) {
-    teamGoals.insert({teamA, 0});
-    teamGoals.insert({teamB, 0});
+    teamGoals[teamA] = 0;
+    teamGoals[teamB] = 0;
 }
 
 }

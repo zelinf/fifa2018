@@ -10,6 +10,9 @@ int main(int argc, char *argv[]) {
     }
 
     std::string configFilePath(argv[1]);
+
+    //std::string configFilePath("resources/config.json");
+
     std::ifstream config(configFilePath, std::ios_base::in);
 
     if (!config) {

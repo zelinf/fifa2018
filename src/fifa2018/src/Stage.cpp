@@ -38,9 +38,14 @@ void Stage::printSchedule(const std::string &fileName) {
     for (std::shared_ptr<Match> match : schedule) {
         std::time_t currentTime = std::chrono::system_clock::to_time_t(
                 match->getTime());
+        int yday_1;
+        int yday_2;
+        if (!isFirstMatch) {
+            yday_1 = std::gmtime(&currentTime)->tm_yday;
+            yday_2 = std::gmtime(&currentDate)->tm_yday;
+        }
         if (isFirstMatch
-            || std::gmtime(&currentTime)->tm_yday
-               != std::gmtime(&currentDate)->tm_yday) {
+            || yday_1 != yday_2 ) {
             isFirstMatch = false;
             currentDate = currentTime;
             out << fmt::format("{:%B %e}\n", *std::gmtime(&currentTime));
@@ -232,7 +237,7 @@ void GroupMatchStage::afterTitle(std::ofstream &out) {
         out << "Group " << static_cast<char>(i + 'A') << '\n';
         for (int j = 0; j < 6; ++j) { // each group has 6 matches
             int index = i * 6 + j;
-            time_t time = std::chrono::system_clock::to_time_t(scheduleRef()[i]->getTime());
+            time_t time = std::chrono::system_clock::to_time_t(scheduleRef()[index]->getTime());
             out << fmt::format(" {} vs {}, {}, {:%B %e %H:%M}\n",
                                scheduleRef()[index]->getTeamA()->getName(),
                                scheduleRef()[index]->getTeamB()->getName(),

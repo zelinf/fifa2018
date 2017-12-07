@@ -82,20 +82,13 @@ public:
      * 返回第一支队伍的进球数
      * @throw std::logic_error 如果runMatch方法还未被调用
      */
-    int32_t goalOfTeamA() const;
+    int32_t goalOfTeamA();
 
     /**
      * 返回第二支队伍的进球数
      * @throw std::logic_error 如果runMatch方法还未被调用
      */
-    int32_t goalOfTeamB() const;
-
-    /**
-     * 比赛结果是否为平局
-     * @return true 如果比赛结果是平局
-     * @throw std::logic_error 如果runMatch方法还未被调用
-     */
-    bool isDraw() const { return goalOfTeamA() == goalOfTeamB(); }
+    int32_t goalOfTeamB();
 
     /**
      * 返回各个球员的进球数。未进球的球员不会被包含在这里
