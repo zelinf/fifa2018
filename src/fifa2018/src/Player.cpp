@@ -14,4 +14,17 @@ Player::Player(std::string name,
           role(role),
           team(team) {}
 
+std::string positionToString(Player::Position pos) {
+    switch (pos) {
+        case Player::Position::GK:
+            return "GK";
+        case Player::Position::DF:
+            return "DF";
+        case Player::Position::MF:
+            return "MF";
+        case Player::Position::FW:
+            return "FW";
+    }
+}
+
 }

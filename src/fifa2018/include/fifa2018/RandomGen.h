@@ -2,6 +2,8 @@
 
 #include <random>
 #include <cstdint>
+#include <cstdlib>
+#include <ctime>
 
 namespace fifa2018 {
 
@@ -12,7 +14,9 @@ public:
 private:
     static RandomGen defaultGen;
 
-    RandomGen() = default;
+    RandomGen() {
+        engine.seed(static_cast<unsigned long>(time(nullptr)));
+    }
 
 public:
     RandomGen(const RandomGen &) = delete;
@@ -20,7 +24,7 @@ public:
     RandomGen(RandomGen &&) = delete;
 
     ~RandomGen() = default;
- 
+
     /**
      * Get a random integer in [from, to)
      * @param from The lower bound (inclusive)

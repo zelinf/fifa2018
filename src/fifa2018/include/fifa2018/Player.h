@@ -54,4 +54,6 @@ public:
     Role getRole() const { return role; }
 };
 
+std::string positionToString(Player::Position pos);
+
 }

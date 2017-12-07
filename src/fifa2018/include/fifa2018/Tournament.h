@@ -38,42 +38,37 @@ private:
     // 设置好小组赛的比赛队伍
     void readConfig();
 
-    // 模拟小组赛，并设置好1/8决赛的比赛队伍
-    void runGroupMatch();
-
-    // 模拟 1/8, 1/4, 1/2, 决赛, 季军争夺赛
-    void runRemainingMatches();
-
-    // 输出统计信息
-    void showStatistics() const;
-
 private:
     std::istream &in;
 
 private:
-    // 剩余要进行的比赛 (back进，front出）
-    std::deque<Match> remainingMatches;
+    nlohmann::json config;
+
+    std::deque<std::shared_ptr<Match>> allMatches;
+
     // 各个队伍获得的积分
     std::map<std::shared_ptr<Team>, Statistics> teamStatistics;
     // 各个球员的进球数
     std::map<std::shared_ptr<Player>, int32_t> playerGoals;
-    // 冠军、亚军、季军
-    std::vector<std::shared_ptr<Team>> topThree;
 
     void readTeams(const nlohmann::json &config);
 
     void readTimeAddress(const nlohmann::json &config);
 
-    void configGroupMatch(const nlohmann::json &config);
+    void configGroupMatch(const nlohmann::json &config, std::vector<std::shared_ptr<Match>> &groupMatches);
 
     std::shared_ptr<Team> findTeam(const std::string &teamName) const;
 
-    static const int GROUP_MATCHES = 6;
+    static const int MATCHES_IN_EACH_GROUP = 6;
     static const int GROUPS = 8;
 
-    void showGroupMatchByGroup(std::ostream &out) const;
+    std::vector<std::vector<std::shared_ptr<Team>>> groups;
 
-    void showGroupMatchByDate(std::ostream &out) const;
+    void sumStatistics(const std::map<std::shared_ptr<Team>, fifa2018::Statistics> &increment);
+
+    std::vector<std::vector<std::shared_ptr<Team>>> readGroups(const nlohmann::json &config);
+
+    std::vector<std::shared_ptr<Match>> popMatches(int32_t count);
 };
 
 }

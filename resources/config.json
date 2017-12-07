@@ -1,4 +1,4 @@
-{
+
   "teams": [
     {
       "name": "Russia (host)",
@@ -1297,7 +1297,7 @@
       ]
     },
     {
-      "name": "Korea Republic",
+      "name": "South Korea",
       "continent": "AFC",
       "players": [
         {
@@ -2307,8 +2307,8 @@
   ],
   "groups": [
     [
-      "Russia",
-      "Uruguay",
+      "Russia (host)",
+      "England",
       "Egypt",
       "Saudi Arabia"
     ],

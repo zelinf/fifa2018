@@ -42,7 +42,7 @@ public:
      * 模拟这场比赛，执行完这个方法后才可以调用返回比赛结果的方法
      */
     void runMatch(std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)> onNewGoal =
-        std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)>());
+    std::function<void(std::shared_ptr<Player>, std::shared_ptr<Team>)>());
 
 private:
     bool hasRun = false;
@@ -75,6 +75,8 @@ public:
     void setTime(const time_type &time) { this->time = time; }
 
     void setAddress(std::string address) { this->address = std::move(address); }
+
+    void setAllowDraw() { allowDraw = true; }
 
     /**
      * 返回第一支队伍的进球数
